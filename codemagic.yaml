@@ -1,0 +1,16 @@
+workflows:
+  android-workflow:
+    name: Android Build
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      vars:
+        PACKAGE_NAME: "com.example.fdfdchat"  # اسم الحزمة الصحيح لتطبيقك
+      flutter: stable
+    scripts:
+      - name: Get dependencies
+        script: flutter pub get
+      - name: Build APK
+        script: flutter build apk
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
