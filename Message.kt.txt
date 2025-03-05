@@ -1,0 +1,3 @@
+package com.example.fdfdchat.models
+
+data class Message(val text: String)
